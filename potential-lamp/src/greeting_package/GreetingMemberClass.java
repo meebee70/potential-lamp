@@ -7,12 +7,14 @@ public class GreetingMemberClass {
 	static Random generator = new Random();
 	final static int GREETING_COUNT = 4;
 	
+	/**
 	public static void main(String[] args) {
 		int seed = generateRandInt();
 		String baseGreeting = generateGreeting(seed);
 		String name = receiveNameInput();
 		System.out.println(baseGreeting.replace("%s", name));
 	}
+	*/
 	
 	private static int generateRandInt() {
 		Random generator = new Random();
