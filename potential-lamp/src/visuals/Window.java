@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
 
 public class Window extends JFrame {
@@ -37,6 +38,9 @@ public class Window extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-	}
+		
+		JButton create = new JButton("Create greeting");
+		contentPane.add(create);
+		}
 
 }
