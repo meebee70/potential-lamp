@@ -21,7 +21,7 @@ public class GreetingMemberClass {
 		return generator.nextInt(GREETING_COUNT);
 	}
 	
-	private static String generateGreeting(int seed) {
+	public static String generateGreeting(int seed) {
 		String greeting = "";
 		switch (seed) {
 			case 0 :

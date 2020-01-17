@@ -2,15 +2,26 @@ package visuals;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
+import javax.swing.SwingConstants;
+
+import greeting_package.GreetingMemberClass;
 
 public class Window extends JFrame {
 
 	private JPanel contentPane;
+	public JButton create;
+	public JLabel output;
+	public Random r = new Random();
 
 	/**
 	 * Launch the application.
@@ -36,11 +47,25 @@ public class Window extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		JButton create = new JButton("Create greeting");
+		output = new JLabel("Output");
+		output.setHorizontalAlignment(SwingConstants.CENTER);
+		output.setLocation(0, 0);
+		output.setSize(450,50);
+		contentPane.add(output);
+		
+		create = new JButton("Create greeting");
+		create.setLocation(5, 150);
+		create.setSize(424,106);
+		create.addActionListener(new Listener());
 		contentPane.add(create);
 		}
-
+	
+	public class Listener implements ActionListener {
+		public void actionPerformed(ActionEvent e){
+			output.setText(GreetingMemberClass.generateGreeting(r.nextInt(4)));
+		}
+	}
 }
