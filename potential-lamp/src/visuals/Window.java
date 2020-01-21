@@ -18,6 +18,8 @@ import greeting_package.GreetingMemberClass;
 
 public class Window extends JFrame {
 
+	private String userName;
+	
 	private JPanel contentPane;
 	public JButton create;
 	public JLabel output;
@@ -65,7 +67,12 @@ public class Window extends JFrame {
 	
 	public class Listener implements ActionListener {
 		public void actionPerformed(ActionEvent e){
-			output.setText(GreetingMemberClass.generateGreeting(r.nextInt(4)));
+			output.setText(GreetingMemberClass.generateGreeting(userName));
 		}
+	}
+	
+	public void setUserName(String name) {
+		System.out.println(name);
+		userName = name;
 	}
 }

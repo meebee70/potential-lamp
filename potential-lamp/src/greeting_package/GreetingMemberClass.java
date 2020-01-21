@@ -21,26 +21,28 @@ public class GreetingMemberClass {
 		return generator.nextInt(GREETING_COUNT);
 	}
 	
-	public static String generateGreeting(int seed) {
+	public static String generateGreeting(String name) {
 		String greeting = "";
+		int seed = generateRandInt();
 		switch (seed) {
 			case 0 :
 				greeting = "Hello, %s.";
 				break;
 			case 1 :
-				greeting = "Yo, what's up &s?";
+				greeting = "Yo, what's up %s?";
 				break;
 			case 2 :
 				greeting = "Greeting and salutation oh illustrious %s, monarch of the ages!";
 				break;
 			case 3 :
-				greeting = "Hi &s, how are you?";	
+				greeting = "Hi %s, how are you?";	
 				break;
 			default :
 				greeting = "Do I know you?";
 				break;
 		}
-		return greeting;
+		
+		return greeting.replace("%s", name);
 	}
 	
 	private static String receiveNameInput() {
